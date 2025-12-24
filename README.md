@@ -1,16 +1,18 @@
-# React + Vite
+# [FOOTBALL COACH: COLLEGE DYNASTY] - CUSTOM UNIVERSE EDITOR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The FC:CD Custom Universe Editor is a client-only web application that lets players of Football Coach: College Dynasty create and edit custom universe JSON files through a UI front end without having to edit the JSON directly.
 
-Currently, two official plugins are available:
+# How it Works:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Upload an existing Football Coach: College Dynasty universe JSON file
 
-## React Compiler
+2. Edit/Add/Remove Bowl Games, Conferences, Divisions, or Teams, interface updates in real time
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. The Universe Editor will Validate the universe against known game rules
 
-## Expanding the ESLint configuration
+4. Export the updated universe as JSON (copy or download)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+(No data ever leaves the browser. There is no backend.)
+
+
+This is a Free and Open Source Application created by JT Taylor.

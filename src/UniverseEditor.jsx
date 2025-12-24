@@ -87,52 +87,55 @@ function validateUniverseDetailed(universe)
 
       divisionTeams.forEach((team, tIdx) => 
       {
+        const teamId = `team-${cIdx}-${dIdx}-${tIdx}`;
         const tAbbr = String(team?.abbreviation ?? "").trim();
-const teamLabel = tAbbr || "(no abbr)";
+        const teamLabel = tAbbr || "(no abbr)";
+        const rival = String(team?.rivalAbbreviation ?? "").trim();
+        const archetype = String(team?.archetype ?? "").trim();
+        const fanbaseType = String(team?.fanbaseType ?? "").trim();
 
-const rival = String(team?.rivalAbbreviation ?? "").trim();
-const archetype = String(team?.archetype ?? "").trim();
-const fanbaseType = String(team?.fanbaseType ?? "").trim();
+        // REQUIRED: archetype
+        if (!archetype) 
+        {
+          errors.push({
+           message: `Team '${teamLabel}' archetype is required.`,
+           targetId: teamId
+          });
+        }
 
-// REQUIRED: archetype
-if (!archetype) {
-  errors.push({
-    message: `Team '${teamLabel}' archetype is required.`,
-    targetId: teamId
-  });
-}
+        // REQUIRED: fanbaseType
+        if (!fanbaseType) 
+        {
+        errors.push({
+        message: `Team '${teamLabel}' fanbaseType is required.`,
+        targetId: teamId
+            });
+        }
 
-// REQUIRED: fanbaseType
-if (!fanbaseType) {
-  errors.push({
-    message: `Team '${teamLabel}' fanbaseType is required.`,
-    targetId: teamId
-  });
-}
-
-// REQUIRED: rivalAbbreviation
-if (!rival) {
-  errors.push({
-    message: `Team '${teamLabel}' rivalAbbreviation is required.`,
-    targetId: teamId
-  });
-} else {
-  // Rival must exist globally
-  if (!globalAbbrevSet.has(rival)) {
-    errors.push({
-      message: `Team '${teamLabel}' has invalid rival '${rival}'.`,
-      targetId: teamId
-    });
-  } else {
-    // Rival must be in same division
-    if (!divisionAbbrevs.has(rival)) {
-      errors.push({
+        // REQUIRED: rivalAbbreviation
+        if (!rival) 
+        {
+        errors.push({
+        message: `Team '${teamLabel}' rivalAbbreviation is required.`,
+        targetId: teamId
+        });
+        } else {
+        // Rival must exist globally
+        if (!globalAbbrevSet.has(rival)) {
+         errors.push({
+        message: `Team '${teamLabel}' has invalid rival '${rival}'.`,
+        targetId: teamId
+        });
+        } else {
+        // Rival must be in same division
+        if (!divisionAbbrevs.has(rival)) {
+        errors.push({
         message: `Team '${teamLabel}' rival '${rival}' must be in the same division.`,
         targetId: divId
-      });
+        });
+        }
+        }
     }
-  }
-}
         
         
       });

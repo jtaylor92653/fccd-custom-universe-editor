@@ -1381,7 +1381,7 @@ export default function UniverseEditor()
     {/* CONFERENCE */}  {/* Conference Header */}               
                     <div className="text-2xl font-semibold text-gray-200  text-shadow-md/50 mb-3">
                             
-                        {(conf?.name ?? "Unnamed Conference")}  </div>
+                        {(conf?.name ?? "Unnamed Conference")} Conference </div>
                         
     {/* CONFERENCE */}  {/* Remove Conference Button */}                    
                             
@@ -1491,7 +1491,7 @@ export default function UniverseEditor()
                     <div className="font-semibold mb-2">
                         
                         {div?.name?.trim() ? div.name : `Division #${dIdx + 1}`}
-                        
+                        Division
                     </div>
 
                     <ul className="space-y-1 text-sm">
@@ -1523,7 +1523,7 @@ export default function UniverseEditor()
                             </div>
                              <div className="text-xl font-bold text-gray-600">
                         
-                            {(div?.name ?? "Unnamed Division")}
+                            {(div?.name ?? "Unnamed Division")} Division
                             </div>
                             
     {/* DIVISION */}    {/* [Remove Division] Button */}

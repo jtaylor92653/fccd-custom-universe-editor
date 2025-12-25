@@ -1490,8 +1490,7 @@ export default function UniverseEditor()
                     <div key={dIdx} className="rounded border bg-gray-50 p-3">
                     <div className="font-semibold mb-2">
                         
-                        {div?.name?.trim() ? div.name : `Division #${dIdx + 1}`}
-                        Division
+                        {div?.name?.trim() ? div.name : `Division #${dIdx + 1}`} Division
                     </div>
 
                     <ul className="space-y-1 text-sm">
